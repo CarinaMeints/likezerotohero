@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Like Hero To Zero - CO2 Emissionen</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .search-box {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        select, button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .result {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #4caf50;
+        }
+        .result h2 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+        .no-result {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #ffc107;
+            color: #856404;
+        }
+        .admin-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .admin-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌍 Like Hero To Zero</h1>
+    <p class="subtitle">Weltweite CO2-Emissionsdaten für eine nachhaltigere Zukunft</p>
+
+    <div class="search-box">
+        <h3>CO2-Ausstoß deines Landes nachschlagen</h3>
+        <form th:action="@{/search}" method="get">
+            <label for="countryCode">Wähle dein Land:</label><br><br>
+            <select name="countryCode" id="countryCode" required>
+                <option value="">-- Bitte wählen --</option>
+                <option value="DE">Deutschland (DE)</option>
+                <option value="US">USA (US)</option>
+                <option value="CN">China (CN)</option>
+                <option value="IN">Indien (IN)</option>
+                <option value="FR">Frankreich (FR)</option>
+                <option value="GB">Großbritannien (GB)</option>
+                <!-- Weitere Länder können hinzugefügt werden -->
+            </select>
+            <button type="submit">🔍 Suchen</button>
+        </form>
+    </div>
+
+    <div th:if="${emission}" class="result">
+        <h2>📊 Aktuellste Daten für <span th:text="${countryCode}"></span></h2>
+        <p><strong>Jahr:</strong> <span th:text="${emission.year}"></span></p>
+        <p><strong>CO2-Emissionen:</strong> <span th:text="${#numbers.formatDecimal(emission.co2Kilotons, 0, 'COMMA', 2, 'POINT')}"></span> kt</p>
+        <p><strong>Hinzugefügt am:</strong> <span th:text="${#temporals.format(emission.dateAdded, 'dd.MM.yyyy')}"></span></p>
+        <p><strong>Von:</strong> <span th:text="${emission.addedBy}"></span></p>
+    </div>
+
+    <div th:if="${countryCode != null and emission == null}" class="no-result">
+        ⚠️ Für dieses Land sind aktuell keine Daten verfügbar.
+    </div>
+
+    <div class="admin-link">
+        <p>Bist du Wissenschaftler:in? <a href="/admin">👉 Zum Admin-Bereich</a></p>
+    </div>
+</div>
+</body>
+</html>
