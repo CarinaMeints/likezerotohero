@@ -24,6 +24,7 @@ public class SearchController {
         var latest = emissionRepository
                 .findFirstByCountryCodeOrderByEmissionDateDesc(countryCode);
 
+        model.addAttribute("countries", countryRepository.findAll());
         model.addAttribute("countryCode", countryCode);
         model.addAttribute("emission", latest.orElse(null));
 
