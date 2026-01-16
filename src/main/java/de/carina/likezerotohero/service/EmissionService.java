@@ -6,32 +6,33 @@ import de.carina.likezerotohero.repository.CountryRepository;
 import de.carina.likezerotohero.repository.EmissionRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class EmissionService {
 
-    private final CountryRepository countryRepository;
     private final EmissionRepository emissionRepository;
+    private final CountryRepository countryRepository;
 
-    public EmissionService(CountryRepository countryRepository,
-                           EmissionRepository emissionRepository) {
-        this.countryRepository = countryRepository;
+    public EmissionService(EmissionRepository emissionRepository,
+                           CountryRepository countryRepository) {
         this.emissionRepository = emissionRepository;
+        this.countryRepository = countryRepository;
     }
 
     public void addEmission(String countryCode, LocalDate date, Double emissionValue, String addedBy) {
-
         Country country = countryRepository.findByCode(countryCode);
-        if (country == null) {
-            throw new RuntimeException("Country not found: " + countryCode);
-        }
 
-        Emission emission = new Emission();
-        emission.setEmission(emissionValue);
-        emission.setEmissionDate(date);   // <- LocalDate
-        emission.setAddedBy(addedBy);
-        emission.setCountry(country);
+        Emission e = new Emission();
+        e.setEmission(emissionValue);
+        e.setEmissionDate(date);
+        e.setAddedBy(addedBy);
+        e.setCountry(country);
 
-        emissionRepository.save(emission);
+        emissionRepository.save(e);
+    }
+
+    public List<Emission> findByUser(String username) {
+        return emissionRepository.findByAddedBy(username);
     }
 }

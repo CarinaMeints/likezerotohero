@@ -11,7 +11,10 @@ import lombok.Setter;
 @Setter
 @Table(name = "emissions")
 public class Emission {
-    @GeneratedValue @Id private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emissions_seq")
+    @SequenceGenerator(name = "emissions_seq", sequenceName = "EMISSIONS_SEQ", allocationSize = 1)
+    private Long id;
     private double emission;
     private String addedBy;
     private LocalDate emissionDate;

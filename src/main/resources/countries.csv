@@ -1,19 +1,19 @@
 code,country_name
 AF,Afghanistan
-EG,Ägypten
-AX,Åland
+EG,Ã„gypten
+AX,Ã…land
 AL,Albanien
 DZ,Algerien
 AD,Andorra
 AO,Angola
 AI,Anguilla
 AG,Antigua und Barbuda
-GQ,Äquatorialguinea
+GQ,Ã„quatorialguinea
 AR,Argentinien
 AM,Armenien
 AW,Aruba
 AZ,Aserbaidschan
-ET,Äthiopien
+ET,Ã„thiopien
 AU,Australien
 HM,Heard und McDonaldinseln
 BS,Bahamas
@@ -43,24 +43,24 @@ CL,Chile
 CN,China
 CK,Cookinseln
 CR,Costa Rica
-CW,Curaçao
-DK,Dänemark
+CW,CuraÃ§ao
+DK,DÃ¤nemark
 DE,Deutschland
 DM,Dominica
 DO,Dominikanische Republik
 DJ,Dschibuti
 EC,Ecuador
 SV,El Salvador
-CI,Elfenbeinküste
+CI,ElfenbeinkÃ¼ste
 ER,Eritrea
 EE,Estland
 SZ,Eswatini
 FI,Finnland
 FJ,Fidschi
 FR,Frankreich
-GF,Französisch-Guayana
-PF,Französisch-Polynesien
-TF,Französische Südgebiete
+GF,FranzÃ¶sisch-Guayana
+PF,FranzÃ¶sisch-Polynesien
+TF,FranzÃ¶sische SÃ¼dgebiete
 GA,Gabun
 GM,Gambia
 GE,Georgien
@@ -68,7 +68,7 @@ GH
 GI,Gibraltar
 GD,Grenada
 GR,Griechenland
-GL,Grönland
+GL,GrÃ¶nland
 GP,Guadeloupe
 AQ,Antarktis
 GU,Guam
@@ -108,7 +108,7 @@ KM,Komoren
 CD,Demokratische Republik Kongo
 CG,Republik Kongo
 KP,Nordkorea
-KR,Südkorea
+KR,SÃ¼dkorea
 XK,Kosovo
 HR,Kroatien
 CU,Kuba
@@ -129,7 +129,7 @@ MY,Malaysia
 MV,Malediven
 ML,Mali
 MT,Malta
-MP,Nördliche Marianen
+MP,NÃ¶rdliche Marianen
 MA,Marokko
 MH,Marshallinseln
 MQ,Martinique
@@ -159,10 +159,10 @@ MK,Nordmazedonien
 NF,Norfolkinsel
 NO,Norwegen
 OM,Oman
-AT,Österreich
+AT,Ã–sterreich
 TL,Timor-Leste
 PK,Pakistan
-PS,Palästina
+PS,PalÃ¤stina
 PW,Palau
 PA,Panama
 PG,Papua-Neuguinea
@@ -173,21 +173,21 @@ PN,Pitcairninseln
 PL,Polen
 PT,Portugal
 PR,Puerto Rico
-RE,Réunion
+RE,RÃ©union
 RW,Ruanda
-RO,Rumänien
+RO,RumÃ¤nien
 RU,Russland
 KN,Saint Kitts und Nevis
 LC,Saint Lucia
 VC,Saint Vincent und die Grenadinen
 MF,Saint-Martin
 PM,Saint-Pierre und Miquelon
-BL,Saint-Barthélemy
+BL,Saint-BarthÃ©lemy
 SB,Salomonen
 AS,Amerikanisch-Samoa
 WS,Samoa
 SM,San Marino
-ST,São Tomé und Príncipe
+ST,SÃ£o TomÃ© und PrÃ­ncipe
 SA,Saudi-Arabien
 SE,Schweden
 CH,Schweiz
@@ -203,10 +203,10 @@ SO,Somalia
 ES,Spanien
 LK,Sri Lanka
 SH,St. Helena/Ascension/Tristan da Cunha
-ZA,Südafrika
+ZA,SÃ¼dafrika
 SD,Sudan
-GS,Südgeorgien und Sandwichinseln
-SS,Südsudan
+GS,SÃ¼dgeorgien und Sandwichinseln
+SS,SÃ¼dsudan
 SR,Suriname
 SY,Syrien
 TJ,Tadschikistan
@@ -220,7 +220,7 @@ TT,Trinidad und Tobago
 TD,Tschad
 CZ,Tschechien
 TN,Tunesien
-TR,Türkei
+TR,TÃ¼rkei
 TM,Turkmenistan
 TC,Turks- und Caicosinseln
 TV,Tuvalu
@@ -235,7 +235,7 @@ VE,Venezuela
 AE,Vereinigte Arabische Emirate
 US,Vereinigte Staaten
 UM,Kleinere Inselbesitzungen der USA
-GB,Vereinigtes Königreich
+GB,Vereinigtes KÃ¶nigreich
 VN,Vietnam
 WF,Wallis und Futuna
 CX,Weihnachtsinsel

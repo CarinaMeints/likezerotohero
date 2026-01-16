@@ -20,6 +20,9 @@ public class AdminController {
     public String adminPanel(Model model, Authentication authentication) {
         String username = authentication.getName();
         model.addAttribute("username", username);
+
+        model.addAttribute("emissions", emissionService.findByUser(username));
+
         return "admin";
     }
 
@@ -31,7 +34,6 @@ public class AdminController {
             Authentication authentication) {
 
         String username = authentication.getName();
-
         emissionService.addEmission(countryCode, emissionDate, co2Kilotons, username);
 
         return "redirect:/admin";

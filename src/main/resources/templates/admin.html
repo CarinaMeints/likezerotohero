@@ -4,45 +4,40 @@
     <meta charset="UTF-8">
     <title>Adminbereich – Emissionsverwaltung</title>
 </head>
+    <body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Land</th>
+            <th>Datum</th>
+            <th>CO₂-Ausstoß (kt)</th>
+            <th>Hinzugefügt von</th>
+        </tr>
+        <tr th:each="e : ${emissions}">
+            <td th:text="${e.country.code}"></td>
+            <td th:text="${e.emissionDate}"></td>
+            <td th:text="${e.emission}"></td>
+            <td th:text="${e.addedBy}"></td>
+        </tr>
+    </table>
 
-<body>
+    <h2>Neue Emission hinzufügen</h2>
 
-<h1>Adminbereich</h1>
+    <form action="/admin/add" method="post">
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 
-<p>Angemeldet als: <strong th:text="${username}"></strong></p>
+        <label>Land (ISO-Code):</label><br>
+        <input type="text" name="countryCode" required><br><br>
 
-<a href="/">Logout</a>
+        <label>Datum der Messung:</label><br>
+        <input type="date" name="emissionDate" required><br><br>
 
-<hr>
+        <label>CO₂-Ausstoß (in Kilotonnen):</label><br>
+        <input type="number" step="0.01" name="co2Kilotons" required><br><br>
 
-<h2>Neue Emission hinzufügen</h2>
+        <button type="submit">Speichern</button>
+    </form>
 
-<form action="/admin/add" method="post">
-
-    <label>Land (ISO-Code):</label><br>
-    <input type="text" name="countryCode" placeholder="z.B. DE" required><br><br>
-
-    <label>Datum der Messung:</label><br>
-    <input type="date" name="emissionDate" required><br><br>
-
-    <label>CO₂-Ausstoß (in Kilotonnen):</label><br>
-    <input type="number" step="0.01" name="co2Kilotons" required><br><br>
-
-    <button type="submit">Speichern</button>
-</form>
-
-<hr>
-
-<h2>Bisher eingetragene Emissionen</h2>
-
-<table border="1" cellpadding="5">
-    <tr>
-        <th>ID</th>
-        <th>Land</th>
-        <th>Datum</th>
-        <th>Emission (kt)</th>
-        <th>Erstellt von</th>
-</table>
-
-</body>
+    <a href="/">Logout</a>
+    </body>
 </html>
