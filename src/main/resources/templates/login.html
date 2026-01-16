@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Like Hero To Zero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 350px;
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .info {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h1>🔐 Login</h1>
+
+    <!-- Fehlermeldung bei falschem Login -->
+    <div th:if="${param.error}" class="error">
+        ❌ Falscher Benutzername oder Passwort!
+    </div>
+
+    <!-- Erfolgsmeldung nach Registrierung -->
+    <div th:if="${param.registered}" class="info">
+        ✅ Registrierung erfolgreich! Du kannst dich jetzt einloggen.
+    </div>
+
+    <!-- Logout-Bestätigung -->
+    <div th:if="${param.logout}" class="info">
+        👋 Du wurdest erfolgreich ausgeloggt.
+    </div>
+
+    <!-- Login-Formular -->
+    <form th:action="@{/login}" method="post">
+        <label for="username">Benutzername:</label>
+        <input type="text"
+               id="username"
+               name="username"
+               placeholder="Benutzername"
+               required
+               autofocus>
+
+        <label for="password">Passwort:</label>
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="Passwort"
+               required>
+
+        <button type="submit">🚀 Einloggen</button>
+    </form>
+
+    <div class="links">
+        <a href="/register">Noch kein Account? Registrieren</a><br>
+        <a href="/">Zur Startseite</a>
+    </div>
+</div>
+</body>
+</html>

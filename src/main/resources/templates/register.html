@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrierung - Like Hero To Zero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 400px;
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #333;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .links a {
+            color: #667eea;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="register-container">
+    <h1>📝 Registrierung</h1>
+
+    <!-- Fehlermeldung anzeigen -->
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+
+    <form th:action="@{/register}" method="post">
+        <label for="username">Benutzername:</label>
+        <input type="text"
+               id="username"
+               name="username"
+               placeholder="Mindestens 3 Zeichen"
+               required
+               minlength="3">
+
+        <label for="password">Passwort:</label>
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="Mindestens 6 Zeichen"
+               required
+               minlength="6">
+
+        <label for="confirmPassword">Passwort bestätigen:</label>
+        <input type="password"
+               id="confirmPassword"
+               name="confirmPassword"
+               placeholder="Passwort wiederholen"
+               required>
+
+        <button type="submit">✅ Registrieren</button>
+    </form>
+
+    <div class="links">
+        <a href="/login">Bereits registriert? Zum Login</a><br>
+        <a href="/">Zur Startseite</a>
+    </div>
+</div>
+</body>
+</html>

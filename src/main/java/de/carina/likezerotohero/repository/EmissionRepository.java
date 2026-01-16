@@ -1,4 +1,7 @@
 package de.carina.likezerotohero.repository;
 
-public class EmissionRepository {
+import de.carina.likezerotohero.model.Emission;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmissionRepository extends JpaRepository<Emission, Long> {
 }
