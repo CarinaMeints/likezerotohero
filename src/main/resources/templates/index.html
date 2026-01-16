@@ -16,7 +16,7 @@
             <option value="">Bitte wählen</option>
             <option th:each="c : ${countries}"
                     th:value="${c.code}"
-                    th:selected="${c.code == countryCode}"
+                    th:selected="${c.code == detectedCountry}"
                     th:text="${c.countryName + ' (' + c.code + ')'}">
             </option>
         </select>
