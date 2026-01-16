@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Like Hero To Zero - CO2 Emissionen</title>
@@ -10,9 +10,9 @@
     <h3>CO₂-Ausstoß eines Landes nachschlagen</h3>
 
     <form th:action="@{/search}" method="get">
-        <label>Länderkürzel:</label><br>
+        <label for="countrySelect">Länderkürzel:</label><br>
 
-        <select name="countryCode" th:value="${countryCode}">
+        <select id="countrySelect" name="countryCode" th:value="${countryCode}">
             <option value="">Bitte wählen</option>
             <option th:each="c : ${countries}"
                     th:value="${c.code}"
