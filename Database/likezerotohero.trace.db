@@ -4385,3 +4385,7 @@ Caused by: java.nio.file.NoSuchFileException: countries.csv
 	at org.h2.tools.Csv.readResultSet(Csv.java:206)
 	at org.h2.tools.Csv.read(Csv.java:180)
 	... 105 more
+2026-01-17 17:06:30.682916+01:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax Fehler in SQL Befehl "Select * From Emissions sort [*]by emission desc"
+Syntax error in SQL statement "Select * From Emissions sort [*]by emission desc"; SQL statement:
+Select * From Emissions sort by emission desc [42000-240]
