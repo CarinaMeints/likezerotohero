@@ -28,7 +28,14 @@
         <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 
         <label>Land (Länderkürzel):</label><br>
-        <input type="text" name="countryCode" required><br><br>
+        <select name="countryCode" required>
+            <option value="">Bitte wählen</option>
+            <option th:each="c : ${countries}"
+                    th:value="${c.code}"
+                    th:text="${c.countryName + ' (' + c.code + ')'}"
+                    th:selected="${c.code == detectedCountry}">
+            </option>
+        </select><br><br>
 
         <label>Datum der Messung:</label><br>
         <input type="date" name="emissionDate" required><br><br>
