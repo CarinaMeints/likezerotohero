@@ -6,6 +6,7 @@
     <title>Adminbereich – Emissionsverwaltung</title>
 </head>
     <body>
+    <a href="/" id="homeButton"> 🌍 </a>
     <table>
         <tr>
             <th>Land</th>
@@ -21,12 +22,12 @@
         </tr>
     </table>
 
-    <h2>Neue Emission hinzufügen</h2>
+    <h2>Neuen Datensatz hinzufügen</h2>
 
     <form action="/admin/add" method="post">
         <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 
-        <label>Land (ISO-Code):</label><br>
+        <label>Land (Länderkürzel):</label><br>
         <input type="text" name="countryCode" required><br><br>
 
         <label>Datum der Messung:</label><br>

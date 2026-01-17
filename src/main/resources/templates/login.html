@@ -76,14 +76,13 @@
 </head>
 <body>
 <div class="login-container">
+    <a href="/" id="homeButton"> 🌍 </a>
     <h1>🔐 Login</h1>
 
-    <!-- Fehlermeldung bei falschem Login -->
     <div th:if="${param.error}" class="error">
         ❌ Falscher Benutzername oder Passwort!
     </div>
 
-    <!-- Erfolgsmeldung nach Registrierung -->
     <div th:if="${param.registered}" class="info">
         ✅ Registrierung erfolgreich! Du kannst dich jetzt einloggen.
     </div>
@@ -115,7 +114,6 @@
 
     <div class="links">
         <a href="/register">Noch kein Account? Registrieren</a><br>
-        <a href="/">Zur Startseite</a>
     </div>
 </div>
 </body>

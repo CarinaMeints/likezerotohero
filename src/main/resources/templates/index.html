@@ -2,7 +2,7 @@
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Like Hero To Zero - CO2 Emissionen</title>
+    <title>Like Hero To Zero</title>
 </head>
 <body>
 <div class="container">
@@ -25,14 +25,17 @@
     </form>
 
     <div th:if="${emission != null}">
-        <h2>📊 Aktuellste Daten für <span th:text="${countryName}"></span></h2>
+        <h2>📊 Aktuellste Daten für <span th:text="${countryName}">: </span></h2>
         <p><strong>Datum:</strong> <span th:text="${emission.emissionDate}"></span></p>
         <p><strong>CO₂-Emissionen:</strong> <span th:text="${emission.emission}"></span> kt</p>
         <p><strong>Hinzugefügt von:</strong> <span th:text="${emission.addedBy}"></span></p>
     </div>
 
-    <div th:if="${countryCode != null and emission == null}">
+    <div th:if="${countryCode != null and countryCode != '' and emission == null}">
         ⚠️ Für dieses Land sind keine Daten vorhanden.
+    </div>
+    <div th:if="${countryCode == null or countryCode == ''}">
+        Bitte wähle ein Land aus.
     </div>
 
     <div class="admin-link">
