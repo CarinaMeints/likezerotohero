@@ -28,6 +28,9 @@ public class SearchController {
         model.addAttribute("countryCode", countryCode);
         model.addAttribute("emission", latest.orElse(null));
 
+        var country = countryRepository.findByCode (countryCode);
+        model.addAttribute("countryName", country != null ? country.getCountryName() : null);
+
         return "index";
     }
 }

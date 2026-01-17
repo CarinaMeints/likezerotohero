@@ -10,11 +10,11 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Map;
 
 @Controller
-public class PublicController {
+public class IndexController {
 
     private final CountryRepository countryRepository;
 
-    public PublicController(CountryRepository countryRepository) {
+    public IndexController(CountryRepository countryRepository) {
         this.countryRepository = countryRepository;
     }
 

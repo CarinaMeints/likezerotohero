@@ -8,14 +8,13 @@
     <body>
     <table>
         <tr>
-            <th>ID</th>
             <th>Land</th>
             <th>Datum</th>
             <th>CO₂-Ausstoß (kt)</th>
             <th>Hinzugefügt von</th>
         </tr>
         <tr th:each="e : ${emissions}">
-            <td th:text="${e.country.code}"></td>
+            <td th:text="${e.country.getCountryName()}"></td>
             <td th:text="${e.emissionDate}"></td>
             <td th:text="${e.emission}"></td>
             <td th:text="${e.addedBy}"></td>

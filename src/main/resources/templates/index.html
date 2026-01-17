@@ -25,7 +25,7 @@
     </form>
 
     <div th:if="${emission != null}">
-        <h2>📊 Aktuellste Daten für <span th:text="${countryCode}"></span></h2>
+        <h2>📊 Aktuellste Daten für <span th:text="${countryName}"></span></h2>
         <p><strong>Datum:</strong> <span th:text="${emission.emissionDate}"></span></p>
         <p><strong>CO₂-Emissionen:</strong> <span th:text="${emission.emission}"></span> kt</p>
         <p><strong>Hinzugefügt von:</strong> <span th:text="${emission.addedBy}"></span></p>
