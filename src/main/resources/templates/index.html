@@ -2,45 +2,45 @@
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <title>Like Hero To Zero</title>
 </head>
-<body>
-<div class="container">
-    <h1>🌍 Like Hero To Zero</h1>
-    <h3>CO₂-Ausstoß eines Landes nachschlagen</h3>
+<body class="index">
+    <div class="index-container">
+        <h1>🌍 Like Hero To Zero</h1>
+        <h3>CO₂-Ausstoß eines Landes nachschlagen</h3>
 
-    <form th:action="@{/search}" method="get">
-        <label for="countrySelect">Länderkürzel:</label><br>
+        <form th:action="@{/search}" method="get">
+            <label for="countrySelect">Länderkürzel:</label><br>
+            <select id="countrySelect" name="countryCode" th:value="${countryCode}">
+                <option value="">Bitte wählen</option>
+                <option th:each="c : ${countries}"
+                        th:value="${c.code}"
+                        th:selected="${c.code == detectedCountry}"
+                        th:text="${c.countryName + ' (' + c.code + ')'}">
+                </option>
+            </select><br>
 
-        <select id="countrySelect" name="countryCode" th:value="${countryCode}">
-            <option value="">Bitte wählen</option>
-            <option th:each="c : ${countries}"
-                    th:value="${c.code}"
-                    th:selected="${c.code == detectedCountry}"
-                    th:text="${c.countryName + ' (' + c.code + ')'}">
-            </option>
-        </select>
+            <button id="searchButton" type="submit">Suchen</button>
+        </form>
 
-        <button type="submit">Suchen</button>
-    </form>
+        <div th:if="${emission != null}">
+            <h2>📊 Aktuellste Daten für <span th:text="${countryName}">: </span></h2>
+            <p><strong>Datum:</strong> <span th:text="${emission.emissionDate}"></span></p>
+            <p><strong>CO₂-Emissionen:</strong> <span th:text="${emission.emission}"></span> kt</p>
+            <p><strong>Hinzugefügt von:</strong> <span th:text="${emission.addedBy}"></span></p>
+        </div>
 
-    <div th:if="${emission != null}">
-        <h2>📊 Aktuellste Daten für <span th:text="${countryName}">: </span></h2>
-        <p><strong>Datum:</strong> <span th:text="${emission.emissionDate}"></span></p>
-        <p><strong>CO₂-Emissionen:</strong> <span th:text="${emission.emission}"></span> kt</p>
-        <p><strong>Hinzugefügt von:</strong> <span th:text="${emission.addedBy}"></span></p>
+        <div th:if="${countryCode != null and countryCode != '' and emission == null}">
+            ⚠️ Für dieses Land sind keine Daten vorhanden.
+        </div>
+        <div th:if="${countryCode == null or countryCode == ''}">
+            Bitte wähle ein Land aus.
+        </div>
+
+        <div class="admin-link">
+            <p>Bist du Wissenschaftler:in? <a href="/admin">👉 Zum Admin-Bereich</a></p>
+        </div>
     </div>
-
-    <div th:if="${countryCode != null and countryCode != '' and emission == null}">
-        ⚠️ Für dieses Land sind keine Daten vorhanden.
-    </div>
-    <div th:if="${countryCode == null or countryCode == ''}">
-        Bitte wähle ein Land aus.
-    </div>
-
-    <div class="admin-link">
-        <p>Bist du Wissenschaftler:in? <a href="/admin">👉 Zum Admin-Bereich</a></p>
-    </div>
-</div>
 </body>
 </html>

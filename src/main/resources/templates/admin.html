@@ -6,56 +6,60 @@
     <title>Adminbereich – Emissionsverwaltung</title>
 </head>
     <body>
-    <a href="/" id="homeButton"> 🌍 </a>
-    <table>
-        <tr>
-            <th>Land</th>
-            <th>Datum</th>
-            <th>CO₂-Ausstoß (kt)</th>
-            <th>Hinzugefügt von</th>
-        </tr>
-        <tr th:each="e : ${emissions}">
-            <td th:text="${e.country.getCountryName()}"></td>
-            <td th:text="${e.emissionDate}"></td>
-            <td th:text="${e.emission}"></td>
-            <td th:text="${e.addedBy}"></td>
-        </tr>
-    </table>
+    <div class="admin-container">
+        <a href="/" id="homeButton">🌍</a><br>
+        <table>
+            <tr>
+                <th>Land</th>
+                <th>Datum</th>
+                <th>CO₂-Ausstoß (kt)</th>
+                <th>Hinzugefügt von</th>
+            </tr>
+            <tr th:each="e : ${emissions}">
+                <td th:text="${e.country.getCountryName()}"></td>
+                <td th:text="${e.emissionDate}"></td>
+                <td th:text="${e.emission}"></td>
+                <td th:text="${e.addedBy}"></td>
+            </tr>
+        </table><br><br>
 
-    <h2>Neuen Datensatz hinzufügen</h2>
+        <h2>Neuen Datensatz hinzufügen</h2><br>
 
-    <form action="/admin/add" method="post">
-        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+        <form action="/admin/add" method="post">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 
-        <label>Land (Länderkürzel):</label><br>
-        <select name="countryCode" required>
-            <option value="">Bitte wählen</option>
-            <option th:each="c : ${countries}"
-                    th:value="${c.code}"
-                    th:text="${c.countryName + ' (' + c.code + ')'}"
-                    th:selected="${c.code == detectedCountry}">
-            </option>
-        </select><br><br>
+            <label>Land (Länderkürzel):</label><br>
+            <select id="countrySelect" name="countryCode" required>
+                <option value="">Bitte wählen</option>
+                <option th:each="c : ${countries}"
+                        th:value="${c.code}"
+                        th:text="${c.countryName + ' (' + c.code + ')'}"
+                        th:selected="${c.code == detectedCountry}">
+                </option>
+            </select><br><br>
 
-        <label>Datum der Messung:</label><br>
-        <input type="date" name="emissionDate" required><br><br>
+            <label>Datum der Messung:</label><br>
+            <input type="date" name="emissionDate" required><br><br>
 
-        <label>CO₂-Ausstoß (in Kilotonnen):</label><br>
-        <input type="number" id="co2Input" step="0.1" min="0" max="200000" name="co2Kilotons" required>
-        <br><br>
+            <label>CO₂-Ausstoß (in Kilotonnen):</label><br>
+            <input type="number" id="co2Input" step="0.1" min="0" max="200000" name="co2Kilotons" required>
+            <br><br>
 
-        <input type="range"
-               id="co2Slider"
-               min="0"
-               max="200000"
-               step="0.1"
-               value="0">
-        <span id="sliderValue">0</span> kt
+            <input type="range"
+                   id="co2Slider"
+                   min="0"
+                   max="200000"
+                   step="0.1"
+                   value="0">
+            <span id="sliderValue">0</span> kt
 
-        <button type="submit">Speichern</button>
-    </form>
+            <button type="submit">Speichern</button>
+        </form><br><br>
 
-    <a href="/">Logout</a>
-    <link rel="stylesheet" th:href="@{/style.css}">
+        <form th:action="@{/logout}" method="post">
+            <button id="logoutButton" type="submit">Logout</button>
+        </form>
+        <link rel="stylesheet" th:href="@{/style.css}">
+        </div>
     </body>
 </html>
