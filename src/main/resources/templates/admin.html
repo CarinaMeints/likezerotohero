@@ -2,11 +2,13 @@
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/style.css}">
     <script th:src="@{/script.js}" defer></script>
     <title>Adminbereich – Emissionsverwaltung</title>
 </head>
     <body>
-    <div class="admin-container">
+    <div class="container admin-container">
         <a href="/" id="homeButton">🌍</a><br>
         <table>
             <tr>
@@ -59,7 +61,6 @@
         <form th:action="@{/logout}" method="post">
             <button id="logoutButton" type="submit">Logout</button>
         </form>
-        <link rel="stylesheet" th:href="@{/style.css}">
         </div>
     </body>
 </html>

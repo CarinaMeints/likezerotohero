@@ -2,13 +2,14 @@
 <html lang="de" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/style.css}">
     <title>Registrierung - Like Hero To Zero</title>
 </head>
 <body class="register">
-<div class="register-container">
+<div class="container register-container">
     <a href="/" id="homeButton">🌍</a>
-    <h1>📝 Registrierung</h1>
+    <h1>📝 Jetzt registrieren</h1>
 
     <div th:if="${error}" class="error" th:text="${error}"></div>
 
@@ -43,6 +44,5 @@
         <a href="/login">Bereits registriert? Zum Login</a><br>
     </div>
 </div>
-<link rel="stylesheet" th:href="@{/style.css}">
 </body>
 </html>
