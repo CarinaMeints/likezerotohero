@@ -18,17 +18,40 @@
                 <th>Hinzugefügt von</th>
             </tr>
             <tr th:each="e : ${emissions}">
-                <td th:text="${e.country.getCountryName()}"></td>
-                <td th:text="${e.emissionDate}"></td>
-                <td th:text="${e.emission}"></td>
-                <td th:text="${e.addedBy}"></td>
+                <form th:action="@{/admin/update}" method="post">
+                    <input type="hidden" name="id" th:value="${e.id}">
+
+                    <td data-label="Land">
+                        <select name="countryCode">
+                            <option th:each="c : ${countries}"
+                                    th:value="${c.code}"
+                                    th:text="${c.countryName + ' (' + c.code + ')'}"
+                                    th:selected="${c.code == e.country.code}">
+                            </option>
+                        </select>
+                    </td>
+                    <td data-label="Datum">
+                        <input type="date" name="emissionDate" th:value="${e.emissionDate}">
+                    </td>
+                    <td data-label="CO₂-Ausstoß (kt)">
+                        <input type="number" step="0.1" min="0" max="200000" name="emission" th:value="${e.emission}">
+                    </td>
+                    <td data-label="Hinzugefügt von">
+                        <input type="text"
+                               th:value="${e.addedBy}"
+                               readonly
+                               class="readonly-field">
+                    </td>
+                    <td data-label="Aktion">
+                        <button type="submit">💾 Speichern</button>
+                    </td>
+                </form>
             </tr>
         </table><br><br>
 
         <h2>Neuen Datensatz hinzufügen</h2><br>
 
         <form action="/admin/add" method="post">
-            <input type="hidden" name="_csrf" th:value="${_csrf.token}">
 
             <label>Land (Länderkürzel):</label><br>
             <select id="countrySelect" name="countryCode" required>

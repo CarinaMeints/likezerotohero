@@ -21,6 +21,9 @@
                         th:text="${c.countryName + ' (' + c.code + ')'}">
                 </option>
             </select><br>
+            <div th:if="${countryCode == null or countryCode == ''}">
+                Bitte wähle ein Land aus.
+            </div>
 
             <button id="searchButton" type="submit">Suchen</button>
         </form>
@@ -34,9 +37,6 @@
 
         <div th:if="${countryCode != null and countryCode != '' and emission == null}">
             ⚠️ Für dieses Land sind keine Daten vorhanden.
-        </div>
-        <div th:if="${countryCode == null or countryCode == ''}">
-            Bitte wähle ein Land aus.
         </div>
 
         <div class="admin-link">
