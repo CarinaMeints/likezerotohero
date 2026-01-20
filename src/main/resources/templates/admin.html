@@ -10,6 +10,8 @@
     <body>
     <div class="container admin-container">
         <a href="/" id="homeButton">🌍</a><br>
+        <div th:if="${error}" class="error" th:text="${error}"></div>
+        <div th:if="${success}" class="info" th:text="${success}"></div>
         <table>
             <tr>
                 <th>Land</th>
@@ -46,6 +48,10 @@
                         <button type="submit">💾 Speichern</button>
                     </td>
                 </form>
+                <td>
+                    <button type="button" id="deleteButton"
+                            th:onclick="'deleteRow(' + ${e.id} + ', this)'">🗑️</button>
+                </td>
             </tr>
         </table><br><br>
 

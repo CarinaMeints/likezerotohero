@@ -43,6 +43,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/index", "/style.css", "/script.js", "/login", "/register", "/search", "/h2-console/**", "/css/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("SCIENTIST")

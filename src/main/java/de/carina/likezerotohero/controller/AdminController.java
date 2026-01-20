@@ -135,4 +135,19 @@ public class AdminController {
 
         return "redirect:/admin";
     }
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseBody
+    public String deleteEmission(@PathVariable Long id, Authentication authentication) {
+
+        Emission e = emissionRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Emission nicht gefunden"));
+
+        if (!e.getAddedBy().equals(authentication.getName())) {
+            return "FORBIDDEN";
+        }
+
+        emissionRepository.delete(e);
+        return "OK";
+    }
 }

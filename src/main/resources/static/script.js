@@ -14,4 +14,19 @@
     output.textContent = input.value;
 });
 
-
+function deleteRow(id, btn) {
+    fetch('/admin/delete/' + id, {
+        method: 'DELETE',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+        .then(res => res.text())
+        .then(text => {
+            if (text === "OK") {
+                btn.closest("tr").remove();
+            } else {
+                alert("Löschen nicht erlaubt: " + text);
+            }
+        });
+}

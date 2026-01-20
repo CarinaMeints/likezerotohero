@@ -84,6 +84,12 @@ button,
     transition: 0.2s ease;
 }
 
+#deleteButton {
+    border-radius: 50%;
+    width: auto;
+    background-color: #a93a3a;
+}
+
 button:hover,
 #searchButton:hover,
 #logoutButton:hover {
