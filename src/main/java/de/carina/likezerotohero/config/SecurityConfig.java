@@ -24,7 +24,6 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        // UserService implementiert UserDetailsService → also kann es direkt zurückgegeben werden
         return userService;
     }
 

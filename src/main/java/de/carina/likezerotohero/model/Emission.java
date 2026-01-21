@@ -9,7 +9,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "emissions")
+@Table(name = "emissions", uniqueConstraints = @UniqueConstraint(columnNames = {"country_code", "emission_date", "added_by"}))
 public class Emission {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emissions_seq")

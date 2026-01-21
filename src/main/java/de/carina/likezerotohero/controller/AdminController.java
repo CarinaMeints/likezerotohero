@@ -41,6 +41,20 @@ public class AdminController {
         return "admin";
     }
 
+    private boolean validateEmissionData(Double emission, LocalDate date, RedirectAttributes redirectAttributes) {
+        if (emission < 0 || emission > 200000) {
+            redirectAttributes.addFlashAttribute("error",
+                    "CO2-Wert muss zwischen 0 und 200.000 kt liegen!");
+            return false;
+        }
+        if (date.isAfter(LocalDate.now())) {
+            redirectAttributes.addFlashAttribute("error",
+                    "Datum darf nicht in der Zukunft liegen!");
+            return false;
+        }
+        return true;
+    }
+
     @PostMapping("/add")
     public String addEmission(
             @RequestParam String countryCode,
@@ -49,15 +63,7 @@ public class AdminController {
             Authentication authentication,
             RedirectAttributes redirectAttributes) {
 
-        if (co2Kilotons < 0 || co2Kilotons > 200000) {
-            redirectAttributes.addFlashAttribute("error",
-                    "CO2-Wert muss zwischen 0 und 200.000 kt liegen!");
-            return "redirect:/admin";
-        }
-
-        if (emissionDate.isAfter(LocalDate.now())) {
-            redirectAttributes.addFlashAttribute("error",
-                    "Datum darf nicht in der Zukunft liegen!");
+        if (!validateEmissionData(co2Kilotons, emissionDate, redirectAttributes)) {
             return "redirect:/admin";
         }
 
@@ -101,15 +107,7 @@ public class AdminController {
             return "redirect:/admin";
         }
 
-        if (emission < 0 || emission > 200000) {
-            redirectAttributes.addFlashAttribute("error",
-                    "CO2-Wert muss zwischen 0 und 200.000 kt liegen!");
-            return "redirect:/admin";
-        }
-
-        if (emissionDate.isAfter(LocalDate.now())) {
-            redirectAttributes.addFlashAttribute("error",
-                    "Datum darf nicht in der Zukunft liegen!");
+        if (!validateEmissionData(emission, emissionDate, redirectAttributes)) {
             return "redirect:/admin";
         }
 
