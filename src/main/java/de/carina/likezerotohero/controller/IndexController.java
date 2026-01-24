@@ -48,19 +48,28 @@ public class IndexController {
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam String countryCode, Model model) {
-
-        model.addAttribute("countries", countryRepository.findAll());
+    public String search(
+            @RequestParam String countryCode,
+            Model model
+    ) {
+        model.addAttribute("countries",
+                countryRepository.findAll());
         model.addAttribute("countryCode", countryCode);
 
         var latest = emissionRepository
-                .findFirstByCountryCodeOrderByEmissionDateDesc(countryCode);
+                .findFirstByCountryCodeOrderByEmissionDateDesc(
+                        countryCode);
 
-        model.addAttribute("emission", latest.orElse(null));
+        model.addAttribute("emission",
+                latest.orElse(null));
 
-        var country = countryRepository.findByCode(countryCode);
+        var country = countryRepository.findByCode(
+                countryCode);
+
         model.addAttribute("countryName",
-                country != null ? country.getCountryName() : null);
+                country != null
+                        ? country.getCountryName()
+                        : null);
 
         return "index";
     }

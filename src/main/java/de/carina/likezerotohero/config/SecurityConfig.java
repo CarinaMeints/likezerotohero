@@ -34,8 +34,14 @@ public class SecurityConfig {
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(userDetailsService());
-        authProvider.setPasswordEncoder(passwordEncoder());
+
+        DaoAuthenticationProvider authProvider =
+                new DaoAuthenticationProvider(userDetailsService());
+
+        authProvider.setPasswordEncoder(
+                passwordEncoder()
+        );
+
         return authProvider;
     }
 
@@ -44,8 +50,16 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/index", "/style.css", "/script.js", "/login", "/register", "/search", "/h2-console/**", "/css/**").permitAll()
-                        .requestMatchers("/admin/**").hasRole("SCIENTIST")
+
+                        .requestMatchers(
+                                "/", "/index", "/style.css",
+                                "/script.js", "/login", "/register",
+                                "/search", "/h2-console/**", "/css/**"
+                        ).permitAll()
+
+                        .requestMatchers("/admin/**")
+                        .hasRole("SCIENTIST")
+
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form

@@ -14,7 +14,7 @@ public class Country {
     private String code;
     @Column(name = "country_name")
     private String countryName;
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
     private List<Emission> emissions = new ArrayList<>();
     public Country() {}
 

@@ -19,10 +19,6 @@
         ✅ Registrierung erfolgreich! Du kannst dich jetzt einloggen.
     </div>
 
-    <div th:if="${param.logout}" class="info">
-        👋 Du wurdest erfolgreich ausgeloggt.
-    </div>
-
     <form id="loginForm" th:action="@{/login}" method="post">
         <label for="username">Benutzername:</label>
         <input type="text"

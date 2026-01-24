@@ -41,17 +41,27 @@ public class AdminController {
         return "admin";
     }
 
-    private boolean validateEmissionData(Double emission, LocalDate date, RedirectAttributes redirectAttributes) {
+    private boolean validateEmissionData(
+            Double emission,
+            LocalDate date,
+            RedirectAttributes redirectAttributes
+    ) {
         if (emission < 0 || emission > 200000) {
-            redirectAttributes.addFlashAttribute("error",
-                    "CO2-Wert muss zwischen 0 und 200.000 kt liegen!");
+            redirectAttributes.addFlashAttribute(
+                    "error",
+                    "CO2-Wert muss zwischen 0 und 200.000 kt liegen!"
+            );
             return false;
         }
+
         if (date.isAfter(LocalDate.now())) {
-            redirectAttributes.addFlashAttribute("error",
-                    "Datum darf nicht in der Zukunft liegen!");
+            redirectAttributes.addFlashAttribute(
+                    "error",
+                    "Datum darf nicht in der Zukunft liegen!"
+            );
             return false;
         }
+
         return true;
     }
 
@@ -64,13 +74,6 @@ public class AdminController {
             RedirectAttributes redirectAttributes) {
 
         if (!validateEmissionData(co2Kilotons, emissionDate, redirectAttributes)) {
-            return "redirect:/admin";
-        }
-
-        Country country = countryRepository.findByCode(countryCode);
-        if (country == null) {
-            redirectAttributes.addFlashAttribute("error",
-                    "Ungültiges Land!");
             return "redirect:/admin";
         }
 
@@ -101,22 +104,11 @@ public class AdminController {
         Emission e = emissionRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Emission nicht gefunden"));
 
-        if (!e.getAddedBy().equals(authentication.getName())) {
-            redirectAttributes.addFlashAttribute("error",
-                    "Sie dürfen nur Ihre eigenen Einträge bearbeiten!");
-            return "redirect:/admin";
-        }
-
         if (!validateEmissionData(emission, emissionDate, redirectAttributes)) {
             return "redirect:/admin";
         }
 
         Country country = countryRepository.findByCode(countryCode);
-        if (country == null) {
-            redirectAttributes.addFlashAttribute("error",
-                    "Ungültiges Land!");
-            return "redirect:/admin";
-        }
 
         e.setCountry(country);
         e.setEmission(emission);
@@ -136,16 +128,16 @@ public class AdminController {
 
     @DeleteMapping("/delete/{id}")
     @ResponseBody
-    public String deleteEmission(@PathVariable Long id, Authentication authentication) {
+    public String deleteEmission(@PathVariable Long id) {
 
         Emission e = emissionRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Emission nicht gefunden"));
-
-        if (!e.getAddedBy().equals(authentication.getName())) {
-            return "FORBIDDEN";
-        }
+                .orElseThrow(() ->
+                        new IllegalArgumentException(
+                                "Emission nicht gefunden"
+                        ));
 
         emissionRepository.delete(e);
+
         return "OK";
     }
 }
