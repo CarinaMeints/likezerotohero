@@ -1,4 +1,4 @@
-package de.carina.likezerotohero.controller;
+package de.carina.likeherotozero.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

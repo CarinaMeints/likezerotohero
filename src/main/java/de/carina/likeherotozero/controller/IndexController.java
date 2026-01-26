@@ -1,7 +1,7 @@
-package de.carina.likezerotohero.controller;
+package de.carina.likeherotozero.controller;
 
-import de.carina.likezerotohero.repository.CountryRepository;
-import de.carina.likezerotohero.repository.EmissionRepository;
+import de.carina.likeherotozero.repository.CountryRepository;
+import de.carina.likeherotozero.repository.EmissionRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

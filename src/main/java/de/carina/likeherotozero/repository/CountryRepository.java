@@ -1,7 +1,7 @@
-package de.carina.likezerotohero.repository;
+package de.carina.likeherotozero.repository;
 
-import de.carina.likezerotohero.model.Country;
-import de.carina.likezerotohero.model.Emission;
+import de.carina.likeherotozero.model.Country;
+import de.carina.likeherotozero.model.Emission;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

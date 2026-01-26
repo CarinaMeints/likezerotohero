@@ -1,9 +1,9 @@
-package de.carina.likezerotohero.service;
+package de.carina.likeherotozero.service;
 
-import de.carina.likezerotohero.model.Country;
-import de.carina.likezerotohero.model.Emission;
-import de.carina.likezerotohero.repository.CountryRepository;
-import de.carina.likezerotohero.repository.EmissionRepository;
+import de.carina.likeherotozero.model.Country;
+import de.carina.likeherotozero.model.Emission;
+import de.carina.likeherotozero.repository.CountryRepository;
+import de.carina.likeherotozero.repository.EmissionRepository;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;

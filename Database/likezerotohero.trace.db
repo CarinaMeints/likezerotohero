@@ -1,6 +1,6 @@
 2026-01-15 10:59:49.154593Z database: flush
-org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]" [50000-232]
+org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]" [50000-232]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -33,12 +33,12 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/ca
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]" [50000-232]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]" [50000-232]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 32 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
@@ -84,8 +84,8 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 2026-01-15 12:08:33.897750+01:00 database: flush
-org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]" [50000-240]
+org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]" [50000-240]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -147,13 +147,13 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/ca
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at de.carina.likezerotohero.LikezerotoheroApplication.main(LikezerotoheroApplication.java:10)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]" [50000-240]
+	at de.carina.likeherotozero.LikeherotozeroApplication.main(likeherotozeroApplication.java:10)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]" [50000-240]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 62 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
@@ -161,8 +161,8 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/O
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
 	... 56 more
 2026-01-15 12:08:46.370064+01:00 database: flush
-org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]" [50000-240]
+org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]" [50000-240]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -226,13 +226,13 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/ca
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
-	at de.carina.likezerotohero.LikezerotoheroApplication.main(LikezerotoheroApplication.java:10)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]" [50000-240]
+	at de.carina.likeherotozero.LikeherotozeroApplication.main(likeherotozeroApplication.java:10)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]" [50000-240]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 64 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likezerotohero/Database/likezerotohero.mv.db [2.4.240/7]
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/OneDrive/Desktop/IntelliJ Workspace/likeherotozero/Database/likeherotozero.mv.db [2.4.240/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
@@ -240,8 +240,8 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/carin/O
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
 	... 58 more
 2026-01-15 12:10:16.681581Z database: flush
-org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]" [50000-232]
+org.h2.message.DbException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]" [50000-232]
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:407)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
@@ -274,12 +274,12 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/me
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]"
-General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]" [50000-232]
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Allgemeiner Fehler: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]" [50000-232]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 32 more
-Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likezerotohero/Database/likezerotohero.mv.db [2.3.232/7]
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/meintsc/IdeaProjects/likeherotozero/Database/likeherotozero.mv.db [2.3.232/7]
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
 	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
@@ -2946,7 +2946,7 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Feld "COUNTRY_CODE" nicht gefunden
 Column "COUNTRY_CODE" not found; SQL statement:
 INSERT INTO emissions (id, emission, added_by, emission_date, country_code)
 SELECT id, emission, addedBy, emissionDate, country_code
-FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likezerotohero/src/main/resources/emission.csv') [42122-240]
+FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likeherotozero/src/main/resources/emission.csv') [42122-240]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
@@ -3055,7 +3055,7 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Feld "COUNTRY" nicht gefunden
 Column "COUNTRY" not found; SQL statement:
 INSERT INTO emissions (id, emission, added_by, emission_date, country)
 SELECT id, emission, addedBy, emissionDate, country_code
-FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likezerotohero/src/main/resources/emission.csv') [42122-240]
+FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likeherotozero/src/main/resources/emission.csv') [42122-240]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
@@ -3161,7 +3161,7 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Feld "COUNTRY_CODE" nicht gefunden
 Column "COUNTRY_CODE" not found; SQL statement:
 INSERT INTO emissions (id, emission, added_by, emission_date, country_code)
 SELECT id, emission, addedBy, emissionDate, country_code
-FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likezerotohero/src/main/resources/emission.csv') [42122-240]
+FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likeherotozero/src/main/resources/emission.csv') [42122-240]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)
@@ -3270,7 +3270,7 @@ org.h2.jdbc.JdbcSQLSyntaxErrorException: Feld "COUNTRY_CODE" nicht gefunden
 Column "COUNTRY_CODE" not found; SQL statement:
 INSERT INTO emissions (id, emission, added_by, emission_date, country_code)
 SELECT id, emission, addedBy, emissionDate, country_code
-FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likezerotohero/src/main/resources/emission.csv') [42122-240]
+FROM CSVREAD('C:/Users/meintsc/IdeaProjects/likeherotozero/src/main/resources/emission.csv') [42122-240]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	at org.h2.message.DbException.get(DbException.java:223)

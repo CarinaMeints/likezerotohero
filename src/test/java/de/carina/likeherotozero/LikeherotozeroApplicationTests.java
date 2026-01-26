@@ -1,10 +1,10 @@
-package de.carina.likezerotohero;
+package de.carina.likeherotozero;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LikezerotoheroApplicationTests {
+class LikeherotozeroApplicationTests {
 
     @Test
     void contextLoads() {

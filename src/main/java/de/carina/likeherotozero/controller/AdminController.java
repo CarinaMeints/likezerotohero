@@ -1,10 +1,10 @@
-package de.carina.likezerotohero.controller;
+package de.carina.likeherotozero.controller;
 
-import de.carina.likezerotohero.model.Country;
-import de.carina.likezerotohero.model.Emission;
-import de.carina.likezerotohero.repository.CountryRepository;
-import de.carina.likezerotohero.repository.EmissionRepository;
-import de.carina.likezerotohero.service.EmissionService;
+import de.carina.likeherotozero.model.Country;
+import de.carina.likeherotozero.model.Emission;
+import de.carina.likeherotozero.repository.CountryRepository;
+import de.carina.likeherotozero.repository.EmissionRepository;
+import de.carina.likeherotozero.service.EmissionService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

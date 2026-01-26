@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>de.carina</groupId>
-    <artifactId>likezerotohero</artifactId>
+    <artifactId>likeherotozero</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>likezerotohero</name>
-    <description>likezerotohero</description>
+    <name>likeherotozero</name>
+    <description>likeherotozero</description>
     <url/>
     <licenses>
         <license/>

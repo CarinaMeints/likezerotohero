@@ -1,4 +1,4 @@
-package de.carina.likezerotohero.model;
+package de.carina.likeherotozero.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

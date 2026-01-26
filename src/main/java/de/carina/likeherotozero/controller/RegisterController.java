@@ -1,6 +1,6 @@
-package de.carina.likezerotohero.controller;
+package de.carina.likeherotozero.controller;
 
-import de.carina.likezerotohero.service.UserService;
+import de.carina.likeherotozero.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

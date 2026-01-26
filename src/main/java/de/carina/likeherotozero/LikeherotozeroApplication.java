@@ -1,13 +1,13 @@
-package de.carina.likezerotohero;
+package de.carina.likeherotozero;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LikezerotoheroApplication {
+public class LikeherotozeroApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LikezerotoheroApplication.class, args);
+        SpringApplication.run(LikeherotozeroApplication.class, args);
     }
 
 }

@@ -1,6 +1,6 @@
-package de.carina.likezerotohero.config;
+package de.carina.likeherotozero.config;
 
-import de.carina.likezerotohero.service.UserService;
+import de.carina.likeherotozero.service.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;

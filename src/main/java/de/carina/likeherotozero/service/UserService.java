@@ -1,7 +1,7 @@
-package de.carina.likezerotohero.service;
+package de.carina.likeherotozero.service;
 
-import de.carina.likezerotohero.model.User;
-import de.carina.likezerotohero.repository.UserRepository;
+import de.carina.likeherotozero.model.User;
+import de.carina.likeherotozero.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
