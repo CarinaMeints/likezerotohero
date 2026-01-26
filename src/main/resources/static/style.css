@@ -33,13 +33,14 @@ body {
     border-radius: var(--radius);
     padding: 40px;
     margin: 30px;
-    width: 60vw;
+    width: 50vw;
     max-width: 1100px;
     box-shadow: var(--shadow);
 }
 
 .login-container { width: 40vw; }
 .register-container { width: 45vw; }
+.admin-container { width: 60vw; }
 
 h1 {
     text-align: center;
@@ -62,10 +63,6 @@ select {
 
 input::placeholder {
     color: var(--color-primary);
-}
-
-#countrySelect {
-    width: 50%;
 }
 
 button,
@@ -96,7 +93,7 @@ button:hover,
     background: var(--color-button-hover);
 }
 
-#searchButton { width: 50%; margin-bottom: 10px; }
+#searchButton { margin-bottom: 10px; }
 #logoutButton { width: 35%; margin: 0 auto; display: block; }
 
 #homeButton {
@@ -159,6 +156,16 @@ table {
 td {
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-wrapper table {
+    min-width: 600px;
+    border-collapse: collapse;
 }
 
 .readonly-field {

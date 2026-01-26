@@ -12,48 +12,53 @@
         <a href="/" id="homeButton">🌍</a><br>
         <div th:if="${error}" class="error" th:text="${error}"></div>
         <div th:if="${success}" class="info" th:text="${success}"></div>
-        <table>
-            <tr>
-                <th>Land</th>
-                <th>Datum</th>
-                <th>CO₂-Ausstoß (kt)</th>
-                <th>Hinzugefügt von</th>
-            </tr>
-            <tr th:each="e : ${emissions}">
-                <form th:action="@{/admin/update}" method="post">
-                    <input type="hidden" name="id" th:value="${e.id}">
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Land</th>
+                    <th>Datum</th>
+                    <th>CO₂-Ausstoß (kt)</th>
+                    <th>Hinzugefügt von</th>
+                </tr>
+                <tr th:each="e : ${emissions}">
+                    <form th:action="@{/admin/update}" method="post">
+                        <input type="hidden" name="id" th:value="${e.id}">
 
-                    <td data-label="Land">
-                        <select name="countryCode">
-                            <option th:each="c : ${countries}"
-                                    th:value="${c.code}"
-                                    th:text="${c.countryName + ' (' + c.code + ')'}"
-                                    th:selected="${c.code == e.country.code}">
-                            </option>
-                        </select>
+                        <td data-label="Land">
+                            <select name="countryCode">
+                                <option th:each="c : ${countries}"
+                                        th:value="${c.code}"
+                                        th:text="${c.countryName + ' (' + c.code + ')'}"
+                                        th:selected="${c.code == e.country.code}">
+                                </option>
+                            </select>
+                        </td>
+                        <td data-label="Datum">
+                            <input type="date" name="emissionDate" th:value="${e.emissionDate}">
+                        </td>
+                        <td data-label="CO₂-Ausstoß (kt)">
+                            <input type="number" step="0.1" min="0" max="200000" name="emission" th:value="${e.emission}">
+                        </td>
+                        <td data-label="Hinzugefügt von">
+                            <input type="text"
+                                   th:value="${e.addedBy}"
+                                   readonly
+                                   class="readonly-field">
+                        </td>
+                        <td data-label="Aktion">
+                            <button type="submit"
+                                    onclick="return confirm('Möchten Sie die Änderungen wirklich speichern?')">
+                                💾 Speichern
+                            </button>
+                        </td>
+                    </form>
+                    <td>
+                        <button type="button" id="deleteButton"
+                                th:onclick="'confirmDelete(' + ${e.id} + ', this)'">🗑️</button>
                     </td>
-                    <td data-label="Datum">
-                        <input type="date" name="emissionDate" th:value="${e.emissionDate}">
-                    </td>
-                    <td data-label="CO₂-Ausstoß (kt)">
-                        <input type="number" step="0.1" min="0" max="200000" name="emission" th:value="${e.emission}">
-                    </td>
-                    <td data-label="Hinzugefügt von">
-                        <input type="text"
-                               th:value="${e.addedBy}"
-                               readonly
-                               class="readonly-field">
-                    </td>
-                    <td data-label="Aktion">
-                        <button type="submit">💾 Speichern</button>
-                    </td>
-                </form>
-                <td>
-                    <button type="button" id="deleteButton"
-                            th:onclick="'deleteRow(' + ${e.id} + ', this)'">🗑️</button>
-                </td>
-            </tr>
-        </table><br><br>
+                </tr>
+            </table>
+        </div><br><br>
 
         <h2>Neuen Datensatz hinzufügen</h2><br>
 

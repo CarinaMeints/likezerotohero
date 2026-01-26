@@ -14,6 +14,14 @@
     output.textContent = input.value;
 });
 
+function confirmDelete(id, btn) {
+    if (!confirm("Möchten Sie diesen Datensatz wirklich löschen?")) {
+        return;
+    }
+
+    deleteRow(id, btn);
+}
+
 function deleteRow(id, btn) {
     fetch('/admin/delete/' + id, {
         method: 'DELETE',

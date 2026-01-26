@@ -34,7 +34,8 @@ public class IndexController {
             }
 
             RestTemplate rest = new RestTemplate();
-            Map data = rest.getForObject("https://ipapi.co/" + ip + "/json/", Map.class);
+            Map data = rest
+                    .getForObject("https://ipapi.co/" + ip + "/json/", Map.class);
 
             String detectedCountry = (String) data.get("country");
 
